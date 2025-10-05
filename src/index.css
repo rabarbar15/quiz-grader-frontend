@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@import '@radix-ui/themes/styles.css';
+
+@theme {
+  --font-display: 'Satoshi', 'sans-serif';
+  --breakpoint-3xl: 120rem;
+  --color-primary: oklch(0.5558 0.2141 269.02);
+  --color-secondary: oklch(0.4517 0.2153 275.85);
+  --color-success: oklch(0.7824 0.1213 222.46);
+  --color-light: oklch(0.9816 0.0017 247.84);
+  --color-dark: oklch(0.2621 0.0095 248.19);
+  --color-gray: oklch(0.5575 0.0165 244.89);
+  --color-light-gray: oklch(0.9417 0.0052 247.88);
+  /* ... */
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: aqua;
+}
