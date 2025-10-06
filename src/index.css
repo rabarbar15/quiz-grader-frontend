@@ -2,7 +2,7 @@
 @import '@radix-ui/themes/styles.css';
 
 @theme {
-  --font-display: 'Satoshi', 'sans-serif';
+  --font-display: 'Roboto', 'sans-serif';
   --breakpoint-3xl: 120rem;
   --color-primary: oklch(0.5558 0.2141 269.02);
   --color-secondary: oklch(0.4517 0.2153 275.85);
@@ -26,8 +26,4 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background-color: aqua;
 }

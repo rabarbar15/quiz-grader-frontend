@@ -1,12 +1,13 @@
 import { Flex, Text } from '@radix-ui/themes';
-import Btn from './Button';
 import React from 'react';
+import Button from '../common/Button';
 
 interface UploadBoxProps {
   header: string;
   description: string;
   buttonText: string;
   buttonIcon: React.ElementType;
+  onClick?: () => void;
 }
 
 const UploadBox = ({
@@ -14,6 +15,7 @@ const UploadBox = ({
   description,
   buttonText,
   buttonIcon: Icon,
+  onClick,
 }: UploadBoxProps) => {
   return (
     <div className="flex-1 rounded-lg shadow-md bg-white">
@@ -28,7 +30,7 @@ const UploadBox = ({
           <Text className="text-gray pb-2" size="3" weight="medium">
             {description}
           </Text>
-          <Btn label={buttonText} icon={Icon} />
+          <Button label={buttonText} icon={Icon} onClick={onClick} />
         </Flex>
       </div>
     </div>

@@ -38,23 +38,21 @@ const Button = ({
     lg: 'w-8',
   };
   return (
-    <>
-      <button
-        className={`
+    <button
+      className={`
           ${variantClasses[variant]} 
           ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
           rounded-lg transition-all duration-300
         `}
-        disabled={disabled}
-        onClick={onClick}>
-        <div className={`flex justify-center ${sizeClasses[size]}`}>
-          <Icon
-            className={`${iconSizes[size]} text-white border-amber-600 pr-1.5`}
-          />
-          <p className="text-white font-medium">{label}</p>
-        </div>
-      </button>
-    </>
+      disabled={disabled}
+      onClick={onClick}>
+      <div className={`flex justify-center ${sizeClasses[size]}`}>
+        <Icon
+          className={`${iconSizes[size]} text-white border-amber-600 pr-1.5`}
+        />
+        <p className="text-white font-medium">{label}</p>
+      </div>
+    </button>
   );
 };
 

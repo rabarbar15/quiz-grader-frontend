@@ -1,7 +1,7 @@
 import { Table, Text } from '@radix-ui/themes';
-import Button from './Button';
+import Button from '../common/Button';
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/16/solid';
-import StatusBadge from './StatusBadge';
+import StatusBadge from '../common/StatusBadge';
 
 interface Test {
   id: number;
