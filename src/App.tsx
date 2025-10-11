@@ -18,7 +18,7 @@ function App() {
 
   return (
     <Theme>
-      <div className="px-3 md:px-10 bg-gray-50 min-h-screen">
+      <div className="px-3 md:px-10 bg-gray-bg min-h-screen">
         <div className="py-6 max-w-6xl mx-auto flex flex-col gap-6">
           <Header />
           <RouterProvider router={router} />

@@ -14,10 +14,10 @@ const ViewToggle = ({ view, onClick }: ToggleProps) => {
     <ToggleGroup.Root
       type="single"
       defaultValue="students"
-      className="inline-flex rounded-md bg-white cursor-pointer shadow-lg">
+      className="grid grid-cols-2 rounded-md bg-white cursor-pointer shadow-lg w-full md:w-fit">
       <ToggleGroup.Item
         value="students"
-        className="flex items-center gap-2 rounded-l-md px-5 py-2 text-sm font-medium
+        className="flex justify-center items-center gap-2 rounded-l-md px-5 py-2 text-sm font-medium
                    text-black data-[state=on]:bg-primary data-[state=on]:text-white
                    transition-colors duration-300 cursor-pointer"
         onClick={onClick}
@@ -28,7 +28,7 @@ const ViewToggle = ({ view, onClick }: ToggleProps) => {
 
       <ToggleGroup.Item
         value="questions"
-        className="flex items-center gap-2 rounded-r-md px-5 py-2 text-sm font-medium
+        className="flex justify-center items-center gap-2 rounded-r-md px-5 py-2 text-sm font-medium
                    text-black data-[state=on]:bg-primary data-[state=on]:text-white
                    transition-colors duration-300 cursor-pointer"
         onClick={onClick}
