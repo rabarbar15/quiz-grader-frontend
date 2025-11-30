@@ -7,25 +7,23 @@ import {
 } from '@heroicons/react/16/solid';
 import { Select, Text, TextField } from '@radix-ui/themes';
 import Button from '../common/Button';
+import type { Test } from '../../types';
+import type React from 'react';
 
-const GradingPanel = () => {
-  const tests = [
-    {
-      id: 1,
-      name: 'Matematyka - dzial trygonometria',
-    },
-    {
-      id: 2,
-      name: 'Polski - gramatyka',
-    },
-    {
-      id: 3,
-      name: 'Fizyka - kinematyka',
-    },
-  ];
+interface GradingPanelProps {
+  tests: Test[];
+  currentTestId: number;
+  setTestId: React.Dispatch<React.SetStateAction<number>>
+}
 
+const GradingPanel = ({ tests, setTestId }: GradingPanelProps ) => {
+  const handleTestChange = (selectedSubject: string) => {
+    const testId = tests.find((test) => test.subject === selectedSubject)?.id
+    setTestId(Number(testId))
+  }
   const openedTests = tests.filter((test) => test.id != 3);
   const gradedTests = tests.filter((test) => test.id === 3);
+
   return (
     <div className="rounded-lg shadow-lg bg-white p-5 w-full">
       <Text weight="bold" size="5">
@@ -36,14 +34,14 @@ const GradingPanel = () => {
           <Text size="2" className="text-gray">
             Test
           </Text>
-          <Select.Root defaultValue={tests[0].name}>
+          <Select.Root defaultValue={tests[0].subject} onValueChange={handleTestChange}>
             <Select.Trigger variant="surface" />
             <Select.Content>
               <Select.Group>
                 <Select.Label>Otwarte</Select.Label>
                 {openedTests.map((test) => (
-                  <Select.Item key={test.id} value={test.name}>
-                    {test.name}
+                  <Select.Item key={test.id} value={test.subject}>
+                    {test.subject}
                   </Select.Item>
                 ))}
               </Select.Group>
@@ -51,8 +49,8 @@ const GradingPanel = () => {
               <Select.Group>
                 <Select.Label>Ocenione</Select.Label>
                 {gradedTests.map((test) => (
-                  <Select.Item key={test.id} value="orange">
-                    {test.name}
+                  <Select.Item key={test.id} value={test.subject}>
+                    {test.subject}
                   </Select.Item>
                 ))}
               </Select.Group>
