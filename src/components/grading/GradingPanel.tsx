@@ -13,14 +13,14 @@ import type React from 'react';
 interface GradingPanelProps {
   tests: Test[];
   currentTestId: number;
-  setTestId: React.Dispatch<React.SetStateAction<number>>
+  setTestId: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const GradingPanel = ({ tests, setTestId }: GradingPanelProps ) => {
+const GradingPanel = ({ tests, setTestId }: GradingPanelProps) => {
   const handleTestChange = (selectedSubject: string) => {
-    const testId = tests.find((test) => test.subject === selectedSubject)?.id
-    setTestId(Number(testId))
-  }
+    const testId = tests.find((test) => test.subject === selectedSubject)?.id;
+    setTestId(Number(testId));
+  };
   const openedTests = tests.filter((test) => test.id != 3);
   const gradedTests = tests.filter((test) => test.id === 3);
 
@@ -34,7 +34,9 @@ const GradingPanel = ({ tests, setTestId }: GradingPanelProps ) => {
           <Text size="2" className="text-gray">
             Test
           </Text>
-          <Select.Root defaultValue={tests[0].subject} onValueChange={handleTestChange}>
+          <Select.Root
+            defaultValue={tests[0].subject}
+            onValueChange={handleTestChange}>
             <Select.Trigger variant="surface" />
             <Select.Content>
               <Select.Group>

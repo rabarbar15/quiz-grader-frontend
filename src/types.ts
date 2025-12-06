@@ -10,32 +10,32 @@ export interface StudentData {
 }
 
 export interface FeedbackRequest {
-  quizId: number
-  studentData: StudentData
-  language: string
+  quizId: number;
+  studentData: StudentData;
+  language: string;
 }
 
 export interface TestViewAnswer {
-  questionId: number
-  question: string
-  studentAnswer: string
-  correctAnswer: string
-  pointsAwarded: number
-  maxPoints: number
-  feedback: string
+  questionId: number;
+  question: string;
+  studentAnswer: string;
+  correctAnswer: string;
+  pointsAwarded: number;
+  maxPoints: number;
+  feedback: string;
 }
 
 export interface TestViewStudent {
-  id: number
-  name: string
-  className: string
-  score: number
-  maxScore: number
-  answers: TestViewAnswer[]
+  id: number;
+  name: string;
+  className: string;
+  score: number;
+  maxScore: number;
+  answers: TestViewAnswer[];
 }
 
 export interface Test {
-  id: number
-  subject: string
-  students?: TestViewStudent[]
+  id: number;
+  subject: string;
+  students?: TestViewStudent[];
 }
