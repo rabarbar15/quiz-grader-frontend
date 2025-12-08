@@ -5,7 +5,7 @@ import {
   CheckBadgeIcon,
   ClockIcon,
   CheckCircleIcon,
-  ArrowUpCircleIcon,
+  PaintBrushIcon,
 } from '@heroicons/react/16/solid';
 import RecentTests from '../components/dashboard/RecentTests';
 import { useNavigate } from 'react-router-dom';
@@ -17,9 +17,13 @@ const Dashboard = () => {
     navigate('/grading');
   };
 
+  const handleCreatorClick = () => {
+    navigate('/testCreator');
+  };
+
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
         <StatsCard
           icon={DocumentTextIcon}
           value={24}
@@ -38,10 +42,11 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-col justify-between gap-5 md:flex-row">
         <UploadBox
-          header="Wgraj nowy test"
-          description="Prześlij plik Excel z odpowiedziami uczniów, a AI zajmie się resztą!"
-          buttonText="Wybierz plik"
-          buttonIcon={ArrowUpCircleIcon}
+          header="Stwórz nowy test"
+          description="Utwórz test przy użyciu intuicyjnego kreatora testów"
+          buttonText="Przejdź do kreatora"
+          buttonIcon={PaintBrushIcon}
+          onClick={handleCreatorClick}
         />
         <UploadBox
           header="Ostatnio ocenione testy"

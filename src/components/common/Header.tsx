@@ -1,7 +1,8 @@
 const Header = () => {
   return (
     <>
-      <div className="flex flex-col gap-4 justify-center items-center md:justify-between md:flex-row">
+      <div
+        className={`flex flex-col gap-4 justify-center items-center md:justify-between md:flex-row`}>
         <div className="flex items-center">
           <h1 className="font-bold text-2xl">
             Quiz

@@ -1,5 +1,9 @@
 import { Theme } from '@radix-ui/themes';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Header from './components/common/Header';
 import Grading from './pages/Grading';
@@ -10,6 +14,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
+import TestCreator from './pages/TestCreator';
 
 function App() {
   const router = createBrowserRouter([
@@ -20,6 +25,10 @@ function App() {
     {
       path: '/grading',
       element: <Grading />,
+    },
+    {
+      path: '/testCreator',
+      element: <TestCreator />,
     },
   ]);
 

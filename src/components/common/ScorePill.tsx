@@ -2,18 +2,18 @@ import { useRef, useState } from 'react';
 import { Text } from '@radix-ui/themes';
 
 interface ScoreProps {
-  pointsAwarded: number;
-  maxPoints: number;
+  pointsAwarded: number | undefined;
+  maxPoints?: number;
 }
 
 export default function Score({ pointsAwarded, maxPoints }: ScoreProps) {
-  const [score, setScore] = useState(pointsAwarded.toString());
+  const [score, setScore] = useState(pointsAwarded?.toString());
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleScoreChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, '');
     if (value === '') return setScore('');
-    let normalizedValue = Math.min(Number(value), maxPoints);
+    let normalizedValue = Math.min(Number(value), maxPoints ?? 100);
     setScore(normalizedValue.toString());
   };
 
@@ -30,9 +30,13 @@ export default function Score({ pointsAwarded, maxPoints }: ScoreProps) {
         className="w-5 text-end cursor-pointer focus:outline-none focus:ring-0 font-medium"
         maxLength={2}
       />
-      <Text weight="medium" className="w-6">
-        /{maxPoints}
-      </Text>
+      {maxPoints ? (
+        <Text weight="medium" className="w-6">
+          /{maxPoints}
+        </Text>
+      ) : (
+        <p className="w-1"></p>
+      )}
       <Text weight="medium">Pkt.</Text>
     </div>
   );
