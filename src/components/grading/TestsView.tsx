@@ -22,13 +22,13 @@ const TestsView = ({
   numberOfStudents,
 }: TestViewProps) => {
   const setNextStudentId = () => {
-    let nextId = currentStudentId + 1;
+    const nextId = currentStudentId + 1;
     if (nextId > numberOfStudents) return;
     setStudentId(nextId);
   };
 
   const setPrevStudentId = () => {
-    let nextId = currentStudentId - 1;
+    const nextId = currentStudentId - 1;
     if (nextId <= 0) return;
     setStudentId(nextId);
   };

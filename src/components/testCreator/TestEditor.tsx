@@ -5,7 +5,7 @@ import { PlusCircleIcon } from '@heroicons/react/16/solid';
 
 const TestEditor = () => {
   return (
-    <div className="col-span-4 flex flex-col gap-2 bg-white rounded-lg shadow-md px-5 py-6">
+    <div className=" flex flex-col gap-2 bg-white rounded-lg shadow-md px-5 py-6">
       <Text size="5" weight="bold">
         Tworzenie nowego testu
       </Text>
@@ -34,11 +34,11 @@ const TestEditor = () => {
       </div>
 
       <div>
-        <div className='flex justify-between mb-5 items-center'>
+        <div className="flex justify-between mb-5 items-center">
           <Text size="4" weight="bold">
             Pytania testowe
           </Text>
-          <Button label='Dodaj pytanie' icon={PlusCircleIcon} size='sm' />
+          <Button label="Dodaj pytanie" icon={PlusCircleIcon} size="sm" />
         </div>
         <TestQuestion />
       </div>

@@ -7,25 +7,21 @@ const TestQuestion = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6">
           <Text size="3" weight="medium">
-            Pytanie 1: Wybierz dupe
+            Pytanie 1: Wybierz odpowiedz
           </Text>
           <Badge>Jednokrotny wybór</Badge>
         </div>
         <Score pointsAwarded={undefined} />
       </div>
-      <div className='py-3'>
-        <Text>Pytanie brzmi wybierz dupe</Text>
-        {/* <div className='flex flex-col gap-2'> */}
-            <RadioGroup.Root defaultValue="1" name="example">
-        <div className='flex flex-col gap-2'>
-
-                <RadioGroup.Item value="1">Default</RadioGroup.Item>
-                <RadioGroup.Item value="2">Comfortable</RadioGroup.Item>
-                <RadioGroup.Item value="3">Compact</RadioGroup.Item>
-        </div>
-
-            </RadioGroup.Root>
-        {/* </div> */}
+      <div className="py-3">
+        <Text>Pytanie brzmi wybierz odpowiedz</Text>
+        <RadioGroup.Root defaultValue="1" name="example">
+          <div className="flex flex-col gap-2">
+            <RadioGroup.Item value="1">Default</RadioGroup.Item>
+            <RadioGroup.Item value="2">Comfortable</RadioGroup.Item>
+            <RadioGroup.Item value="3">Compact</RadioGroup.Item>
+          </div>
+        </RadioGroup.Root>
       </div>
     </div>
   );

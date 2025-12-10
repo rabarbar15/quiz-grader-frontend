@@ -11,9 +11,9 @@ export default function Score({ pointsAwarded, maxPoints }: ScoreProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleScoreChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value.replace(/\D/g, '');
+    const value = e.target.value.replace(/\D/g, '');
     if (value === '') return setScore('');
-    let normalizedValue = Math.min(Number(value), maxPoints ?? 100);
+    const normalizedValue = Math.min(Number(value), maxPoints ?? 100);
     setScore(normalizedValue.toString());
   };
 
